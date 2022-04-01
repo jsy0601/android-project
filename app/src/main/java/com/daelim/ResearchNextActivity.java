@@ -2,19 +2,21 @@ package com.daelim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class ResearchNextActivity extends AppCompatActivity {
 
-    private RadioGroup rg_content;
-    private RadioButton rb_1, rb_2;
-
+    private CheckBox cb_a, cb_b, cb_c;
     private String preData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,28 +25,40 @@ public class ResearchNextActivity extends AppCompatActivity {
         preData = getIntent().getStringExtra("data");
         Log.e("!!!", "" + preData);
 
-        rb_1 = findViewById(R.id.rb_1);
-        rb_2 = findViewById(R.id.rb_2);
-        rg_content = findViewById(R.id.rg_content);
+        cb_a = findViewById(R.id.cb_a);
+        cb_b = findViewById(R.id.cb_b);
+        cb_c = findViewById(R.id.cb_c);
 
-        rb_1.setOnClickListener(new View.OnClickListener() {
+        Button bt_next = findViewById(R.id.bt_next);
+        bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ResearchNextActivity.this, "rb_1 : " + rb_1.isChecked()+ ", rb_2 : " + rb_1.isChecked(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                Log.e("!!!", "cb_a : " + cb_a.isChecked());
+                Log.e("!!!", "cb_b : " + cb_b.isChecked());
+                Log.e("!!!", "cb_c : " + cb_c.isChecked());
 
-        rg_content.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.rb_3:
-                        Toast.makeText(ResearchNextActivity.this, "도보를 선택했습니다.", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.rb_4:
-                        Toast.makeText(ResearchNextActivity.this, "자전거를 선택했습니다.", Toast.LENGTH_SHORT).show();
-                        break;
+                String str = "";
+                if (cb_a.isChecked()) {
+                    str = str + "케찹";
                 }
+                if (cb_b.isChecked()) {
+                    if (str.length() > 0) {
+                        str = str + ", 스윗 칠리";
+                    } else {
+                        str = str + "스윗 칠리";
+                    }
+                }
+                if (cb_c.isChecked()) {
+                    if (str.length() > 0) {
+                        str = str + ", 스윗 어니언";
+                    } else {
+                        str = str + "스윗 어니언";
+                    }
+                }
+                Intent intent = new Intent(ResearchNextActivity.this, ResearchNextActivity2.class);
+                intent.putExtra("data", str);
+                startActivity(intent);
+                finish();
             }
         });
     }

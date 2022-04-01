@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ResearchNextActivity">
+    tools:context=".ResearchActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="소스 고르기"
+        android:text="치즈 고르기"
         android:textSize="30dp"
         />
     <ImageView
@@ -18,45 +19,49 @@
         android:layout_height="200dp"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:src="@drawable/sauce"
+        android:src="@drawable/cheese"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아래 중 소스 하나를 선택하세요. (복수선택 가능)"
+        android:text="아래 중 치즈 하나를 선택하세요."
         android:textSize="10dp"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/rg_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <CheckBox
-            android:id="@+id/cb_a"
+        <RadioButton
+            android:id="@+id/rb_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="케찹"
+            android:text="아메리칸 치즈"
+            android:textSize="10dp"
             />
-        <CheckBox
-            android:id="@+id/cb_b"
+        <RadioButton
+            android:id="@+id/rb_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="스윗 칠리"
+            android:text="모차렐라 치즈"
+            android:textSize="10dp"
             />
-        <CheckBox
-            android:id="@+id/cb_c"
+        <RadioButton
+            android:id="@+id/rb_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="스윗 어니언"
+            android:text="치즈 제외"
+            android:textSize="10dp"
             />
-    </LinearLayout>
+    </RadioGroup>
     <Button
-        android:id="@+id/bt_next"
+        android:id="@+id/bt_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="NEXT PAGE"
+        android:text="RESULT PAGE"
         />
 </LinearLayout>
