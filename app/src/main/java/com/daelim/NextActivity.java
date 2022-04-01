@@ -36,8 +36,7 @@ public class NextActivity extends AppCompatActivity {
         super.onBackPressed();
         Intent i = new Intent();
         i.putExtra("data", "00000");
-        startActivityForResult(i,5);
-        setResult(RESULT_OK, i);
-        finish();
+        setResult(RESULT_OK, i); //결과 값 설정
+        finish(); //현재 엑티비티 종료
     }
 }

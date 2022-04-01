@@ -3,14 +3,18 @@ package com.daelim;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class InitActivity extends AppCompatActivity {
     private InitActivity activity;
+
+    private static final int REQUEST_CODE = 777; //상수값을 선언
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class InitActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, NextActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
         Button survey = findViewById(R.id.bt_survey);
@@ -48,10 +52,19 @@ public class InitActivity extends AppCompatActivity {
         });
     }
 
-    @SuppressLint("RestrictedApi")
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        data.getStringExtra("data");
+
+        if (resultCode == RESULT_OK) {
+            Toast.makeText(activity, "NEXT 수신 성공", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(activity, "NEXT 수신 실패", Toast.LENGTH_SHORT).show();
+        }
+
+        if(requestCode == REQUEST_CODE) {
+            String resultTxt = data.getStringExtra("data");
+            Log.e("!!!", "" + resultTxt);
+        }
     }
 }
