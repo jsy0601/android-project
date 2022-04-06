@@ -10,20 +10,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResearchNextActivity extends AppCompatActivity {
 
     private CheckBox cb_a, cb_b, cb_c;
-    private String preData;
+    private String preData1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_research_next);
 
-        preData = getIntent().getStringExtra("data");
-        Log.e("!!!", "" + preData);
+        preData1 = getIntent().getStringExtra("bread");
+        Log.e("!!!", "" + preData1);
 
         cb_a = findViewById(R.id.cb_a);
         cb_b = findViewById(R.id.cb_b);
@@ -55,8 +56,10 @@ public class ResearchNextActivity extends AppCompatActivity {
                         str = str + "스윗 어니언";
                     }
                 }
+                Toast.makeText(ResearchNextActivity.this, str, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ResearchNextActivity.this, ResearchNextActivity2.class);
-                intent.putExtra("data", str);
+                intent.putExtra("bread", preData1);
+                intent.putExtra("sauce", str);
                 startActivity(intent);
                 finish();
             }

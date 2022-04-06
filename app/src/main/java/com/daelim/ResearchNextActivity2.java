@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResearchNextActivity2 extends AppCompatActivity {
@@ -16,15 +17,16 @@ public class ResearchNextActivity2 extends AppCompatActivity {
     private RadioGroup rg_content;
     private RadioButton rb_1, rb_2, rb_3;
     private String str;
-    private String preData;
+    private String preData1,preData2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_research_next2);
 
-        preData = getIntent().getStringExtra("data");
-        Log.e("!!!", "" + preData);
+        preData1 = getIntent().getStringExtra("bread");
+        preData2 = getIntent().getStringExtra("sauce");
+        Log.e("!!!", "" + preData2);
 
         rb_1 = findViewById(R.id.rb_1);
         rb_2 = findViewById(R.id.rb_2);
@@ -55,7 +57,9 @@ public class ResearchNextActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ResearchNextActivity2.this, ResultActivity.class);
-                intent.putExtra("data", str);
+                intent.putExtra("bread", preData1);
+                intent.putExtra("sauce", preData2);
+                intent.putExtra("cheese", str);
                 startActivity(intent);
                 finish();
             }

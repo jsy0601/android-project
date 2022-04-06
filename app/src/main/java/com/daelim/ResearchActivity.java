@@ -52,7 +52,7 @@ public class ResearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ResearchActivity.this, ResearchNextActivity.class);
-                intent.putExtra("data", str);
+                intent.putExtra("bread", str);
                 startActivity(intent);
                 finish();
             }
