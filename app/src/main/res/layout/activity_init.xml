@@ -24,4 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="설문지" />
+    <Button
+        android:id="@+id/bt_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView" />
+    <Button
+        android:id="@+id/bt_listcustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LISTCUSOM" />
 </LinearLayout>

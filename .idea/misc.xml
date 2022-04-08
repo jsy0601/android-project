@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_cal.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_init.xml" value="0.1" />
+        <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_init.xml" value="0.2" />
+        <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_list.xml" value="0.1" />
+        <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_list_custom.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_next.xml" value="0.1" />
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_research.xml" value="0.176" />
@@ -12,6 +14,7 @@
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_research_next2.xml" value="0.264" />
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_result.xml" value="0.1" />
         <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/gram/AndroidStudioProjects/jungseoyeon/app/src/main/res/layout/list_custom_item.xml" value="0.1" />
       </map>
     </option>
   </component>

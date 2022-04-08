@@ -50,6 +50,22 @@ public class InitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button list = findViewById(R.id.bt_list);
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, ListActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button listcustom = findViewById(R.id.bt_listcustom);
+        listcustom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, ListCustomActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

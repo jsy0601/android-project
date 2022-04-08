@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jungseoyeon">
         <activity
+            android:name=".ListCustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResultActivity"
             android:exported="false" />
         <activity
