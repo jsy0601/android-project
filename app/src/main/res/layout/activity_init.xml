@@ -11,14 +11,12 @@
         android:id="@+id/bt_calc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="계산기" />
-
+        android:text="@string/cal" />
     <Button
         android:id="@+id/bt_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NEXT" />
-
     <Button
         android:id="@+id/bt_survey"
         android:layout_width="match_parent"
@@ -34,4 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LISTCUSOM" />
+    <Button
+        android:id="@+id/bt_sharedpreference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharedPreferenceTest" />
 </LinearLayout>

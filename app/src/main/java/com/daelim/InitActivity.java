@@ -66,6 +66,14 @@ public class InitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button sp = findViewById(R.id.bt_sharedpreference);
+        sp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, SharedPreferenceActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
