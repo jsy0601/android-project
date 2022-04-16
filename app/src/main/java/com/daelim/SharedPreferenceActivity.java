@@ -31,6 +31,19 @@ public class SharedPreferenceActivity extends AppCompatActivity {
                 e.putString("key", et_text.getText().toString());
                 e.commit();
                 et_text.setText("");
+                String s = sp.getString("key", "");
+                if(s.equals("")) {
+                    AlertDialog.Builder ab = new AlertDialog.Builder(SharedPreferenceActivity.this);
+                    ab.setTitle("값 오류");
+                    ab.setMessage("값을 입력하세요.");
+                    ab.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                        }
+                    });
+                    ad = ab.create();
+                    ad.show();
+                }
             }
         });
 
@@ -43,6 +56,16 @@ public class SharedPreferenceActivity extends AppCompatActivity {
                 ab.setTitle("값 확인");
                 ab.setMessage(s);
                 ab.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+                ab.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+                ab.setNeutralButton("적용", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                     }
