@@ -2,6 +2,7 @@ package com.daelim;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +72,23 @@ public class InitActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, SharedPreferenceActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button call = findViewById(R.id.call);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_DIAL);
+                i.setData(Uri.parse("tel:01012345678"));
+                startActivity(i);
+            }
+        });
+        Button web = findViewById(R.id.web);
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, WebActivity.class);
                 startActivity(intent);
             }
         });
