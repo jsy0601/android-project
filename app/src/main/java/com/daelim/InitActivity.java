@@ -92,6 +92,14 @@ public class InitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button service = findViewById(R.id.service);
+        service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, ServiceActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
